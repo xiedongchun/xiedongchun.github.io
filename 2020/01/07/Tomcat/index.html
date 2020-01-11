@@ -9,9 +9,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="jdk下载页面：https://www.oracle.com/technetwork/java/javase/downloads/index.html
-JDK环境变量配置：  变量名：JAVA_HO,"> 
+    <meta name="keywords" content="blog,"> 
+    <meta name="description" content="准备jdk下载页面：https://www.oracle.com/technetwork/java/javase/downloads/index.html
+JDK环境变量配置：　　添加 变量名：JA,"> 
     <meta name="author" content="xiedongchun"> 
     <link rel="alternative" href="atom.xml" title="DongchunXie" type="application/atom+xml"> 
     <link rel="icon" href="/img/icon.jpg"> 
@@ -68,15 +68,18 @@ JDK环境变量配置：  变量名：JAVA_HO,">
 
         </div>
         <div class="content markdown">
-            <p>jdk下载页面：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a></p>
-<p>JDK环境变量配置：<br>  变量名：JAVA_HOME<br>  变量值：C:\Program Files\Java\jdk-11.0.4 （即为JDK路径）</p>
-<p>  Path系统变量添加：<br>   ;%JAVA_HOME%\bin（前面有个分号）<br>  （如果Tomcat出现打开闪退的情况，试试改成 C:\Program Files\Java\jdk-11.0.4\bin; 即不要用%替换，其他的也一样）<br>  （或填另一种值：;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin）<br>   在变量最末尾添加时，若之前末尾无分号，则变量前面需添加分号）</p>
-<p>  新建一个名为CLASSPATH的环境变量<br>   变量名：CLASSPATH<br>   变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>  （前面有个圆点和一个分号，圆点代表当前路径，下图因为我配置jmeter,所以也是加配置在classpath里，无妨）</p>
-<p>验证是否成功：Win+R -&gt;cmd -&gt; java -version 显示jdk版本<br>              javac 显示帮助页面<br>              即配置成功</p>
-<p>Tomcat :<br> 下载地址：<a href="https://tomcat.apache.org/download-90.cgi（注意选择" target="_blank" rel="noopener">https://tomcat.apache.org/download-90.cgi（注意选择</a> Binary Distributions 下的zip文件而不是Source Code Distributions下的，前者是安装包，后者是源码）<br>  目录介绍：<br>   bin：可以执行文件。<br>   conf：tomcat服务器的配置文件<br>   lib：tomcat启动后需要依赖的jar包<br>   logs：tomcat工作之后的日志文件<br>   webapps：是tomcat布暑工程的目录。<br>   work：jsp文件在被翻译之后，保存在当前这个目录下，session对象被序列化之后保存的位置</p>
-<p>  环境变量：<br>   新建 JAVA_HOME 系统变量 ：C:\Program Files\Java\jdk-11.0.4（jdk目录）<br>   启动：<br>     tomcat目录/bin/startup.bat(window启动文件) 找到startup.bat 双击运行<br>     dos环境输入  net start tomcat<br>     dos环境下，cd至bin目录 catalina run 出错时可以看到提示<br>    关闭：<br>     第一种：Ctrl+C键 关闭Tomcat服务器<br>     第二种：点击Tomcat窗口的右上角关闭按钮 （暴力停止服务器）<br>     第三种：找到tomcat目录/bin/shutdown.bat文件，双击执行关闭Tomcat。<br>   在浏览器中输入 127.0.0.1:8080（端口默认8080） 若显示Tomcat页面即搭建成功</p>
-<p>  修改端口<br>   找到tomcat目录/conf/server.xml ，修改port的值，将port端口的值修改为80</p>
-<p>  部署：<br>   第一种：把项目文件拷贝到tomcat/webapps目录下<br>   第二种：当我们在浏览器中直接输入 地址:端口号   那么 默认访问的是Tomcat目录/webapps/ROOT目录，将项目直接放到ROOT下<br>   第三种：在conf/server.xml文件的host元素中配置，例如：<br>            在host标签内书写如下内容<br>                <Context  path="/atguigu"  docBase="D:\atguigu"/><br>                <Context  path=”浏览器要访问的目录---虚拟目录”  docBase=”网站所在磁盘目录”/><br>            配置好之后，要重启服务器。<br>            缺点（Tomcat7.0之后）：如果配置错误：tomcat会启动失败。（如果tomcat里面存放的其他的网站），其他网站也会停机。</p>
+            <p><em>准备</em><br><em>jdk下载页面：<a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/index.html</a></em></p>
+<p><em>JDK环境变量配置：</em><br>　　<em>添加 变量名：JAVA_HOME 变量值：C:\Program Files\Java\jdk-11.0.4 （即为JDK路径）</em><br>　　<em>Path系统变量添加：</em><br>　　　　<em>;%JAVA_HOME%\bin（前面有个分号，如果Tomcat出现打开闪退的情况，试试改成 C:\Program Files\Java\jdk-11.0.4\bin; 即不要用%替换，其他的也一样）</em><br>　　　　<em>或填另一种值：;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</em><br>　　　　<em>在变量最末尾添加时，若之前末尾无分号，则变量前面需添加分号）</em><br>　　<em>新建一个名为CLASSPATH的环境变量</em><br>　　　<em>变量名：CLASSPATH</em><br>　　　<em>变量值：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</em><br>　　　<em>前面有个圆点和一个分号，圆点代表当前路径，下图因为我配置jmeter,所以也是加配置在classpath里，无妨</em><br>　　<em>验证是否成功：Win+R -&gt;cmd -&gt; java -version 显示jdk版本</em><br>　　　　　　　　　<em>键入 javac  显示帮助页面</em><br>　　　　　　<em>即配置成功</em>  </p>
+<hr>
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><p> <em>下载地址：<a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">https://tomcat.apache.org/download-90.cgi</a> （注意选择 Binary Distributions 下的zip文件而不是Source Code Distributions下的，前者是安装包，后者是源码）</em><br>  ##目录介绍##<br>   bin：可以执行文件。<br>   conf：tomcat服务器的配置文件<br>   lib：tomcat启动后需要依赖的jar包<br>   logs：tomcat工作之后的日志文件<br>   webapps：是tomcat布暑工程的目录。<br>   work：jsp文件在被翻译之后，保存在当前这个目录下，session对象被序列化之后保存的位置</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>   新建 JAVA_HOME 系统变量 ：C:\Program Files\Java\jdk-11.0.4（jdk目录）<br>   启动：<br>     tomcat目录/bin/startup.bat(window启动文件) 找到startup.bat 双击运行<br>     dos环境输入  net start tomcat<br>     dos环境下，cd至bin目录 catalina run 出错时可以看到提示<br>    关闭：<br>     第一种：Ctrl+C键 关闭Tomcat服务器<br>     第二种：点击Tomcat窗口的右上角关闭按钮 （暴力停止服务器）<br>     第三种：找到tomcat目录/bin/shutdown.bat文件，双击执行关闭Tomcat。<br>   在浏览器中输入 127.0.0.1:8080（端口默认8080） 若显示Tomcat页面即搭建成功</p>
+<h2 id="修改端口"><a href="#修改端口" class="headerlink" title="修改端口"></a>修改端口</h2><p>   找到tomcat目录/conf/server.xml ，修改port的值，将port端口的值修改为80</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul>
+<li>第一种：把项目文件拷贝到tomcat/webapps目录下</li>
+<li>第二种：当我们在浏览器中直接输入 地址:端口号   那么 默认访问的是Tomcat目录/webapps/ROOT目录，将项目直接放到ROOT下</li>
+<li>第三种：在conf/server.xml文件的host元素中配置，例如：<br>　　　　　　　在host标签内书写如下内容  <pre><code>&lt;Context  path=”浏览器要访问的目录---虚拟目录”  docBase=”网站所在磁盘目录”/&gt;
+例：&lt;Context  path=&quot;/atguigu&quot;  docBase=&quot;D:\atguigu&quot;/&gt;</code></pre>　　　　　　配置好之后，要重启服务器。<br>　　　　　　缺点（Tomcat7.0之后）：如果配置错误：tomcat会启动失败。（如果tomcat里面存放的其他的网站），其他网站也会停机。</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -197,6 +200,10 @@ JDK环境变量配置：  变量名：JAVA_HO,">
 
 
     </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Tomcat"><span class="toc-number">1.</span> <span class="toc-text">Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">1.1.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改端口"><span class="toc-number">1.2.</span> <span class="toc-text">修改端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-number">1.3.</span> <span class="toc-text">部署</span></a></li></ol></li></ol>
+        </div>
     
 </div>
 
